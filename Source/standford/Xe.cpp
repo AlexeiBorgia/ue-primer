@@ -10,7 +10,9 @@ AXe::AXe()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	cespringarm = CreateDefaultSubobject<USpringArmComponent>("cesare_springarm");
+	cespringarm->SetupAttachment(RootComponent);
 	cecamera = CreateDefaultSubobject<UCameraComponent>("cesare_camera");
+	cecamera->SetupAttachment(cespringarm);
 }
 
 // Called when the game starts or when spawned
@@ -31,6 +33,8 @@ void AXe::Tick(float DeltaTime)
 void AXe::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
+	PlayerInputComponent->BindAxis("MoveForward", this, & AXe::MoveForward);
 }
-
+void AXe::MoveForward(float value) {
+	AddMovementInput(GetActorForwardVector(), value);
+}

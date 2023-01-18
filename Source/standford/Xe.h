@@ -19,13 +19,14 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	USpringArmComponent* cespringarm;
-	UCameraComponent* cecamera;
+	UPROPERTY(VisibleAnywhere) USpringArmComponent* cespringarm;
+	UPROPERTY(VisibleAnywhere) UCameraComponent* cecamera;
+	void MoveForward(float value);
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
+	// Called to bind functionality to inputs
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 };
