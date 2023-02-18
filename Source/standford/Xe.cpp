@@ -21,9 +21,9 @@ AXe::AXe()
 	cespringarm->bInheritYaw = true;
 	cecamera = CreateDefaultSubobject<UCameraComponent>("cesare_camera");
 	cecamera->SetupAttachment(cespringarm);
-	bUseControllerRotationYaw = true;
+	bUseControllerRotationYaw =true;
 	bUseControllerRotationPitch = false;
-	bUseControllerRotationRoll = true;
+	bUseControllerRotationRoll = false;
 	interactcomp = CreateDefaultSubobject<UInteractComponent>("ineractcmp");
 	attribute = CreateDefaultSubobject<UCeAttribute>("attributecmp");
 	dynamic_cast<UPrimitiveComponent*>(RootComponent)->SetCollisionObjectType(ECC_WorldDynamic);

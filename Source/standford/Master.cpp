@@ -9,7 +9,8 @@ void AMaster::BeginPlay() {
 	Super::BeginPlay();
 	RunBehaviorTree(btree);
 	APawn* p = UGameplayStatics::GetPlayerPawn(this, 0);
-	if (p) {
-		GetBlackboardComponent()->SetValueAsVector("destination", p->GetActorLocation());
-	}
+	
+
+		GetBlackboardComponent()->SetValueAsVector("Destination", p->GetActorLocation());
+	
 }
