@@ -14,6 +14,7 @@ class STANDFORD_API AMaster : public AAIController
 {
 	GENERATED_BODY()
 protected:
-	UPROPERTY(EditAnywhere,Category="Artorius::AI")UBehaviorTree* btree;
+	UPROPERTY(EditAnywhere,Category="Artorius::AI")UBehaviorTree* Btree;
 	virtual void BeginPlay() override;
+	virtual void OnPossess(APawn*) override;
 };

@@ -7,10 +7,11 @@
 #include "BehaviorTree/BlackboardComponent.h"
 void AMaster::BeginPlay() {
 	Super::BeginPlay();
-	RunBehaviorTree(btree);
+	RunBehaviorTree(Btree);
 	APawn* p = UGameplayStatics::GetPlayerPawn(this, 0);
-	
-
-		GetBlackboardComponent()->SetValueAsVector("Destination", p->GetActorLocation());
-	
+	GetBlackboardComponent()->SetValueAsVector("Destination", p->GetActorLocation());
+}
+void AMaster::OnPossess(APawn*p) {
+	Super::OnPossess(p);
+	//GetBlackboardComponent()->SetValueAsObject("SelfActor", p);
 }

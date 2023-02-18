@@ -28,6 +28,7 @@ AXe::AXe()
 	attribute = CreateDefaultSubobject<UCeAttribute>("attributecmp");
 	dynamic_cast<UPrimitiveComponent*>(RootComponent)->SetCollisionObjectType(ECC_WorldDynamic);
 	GetMesh()->SetSimulatePhysics(false);
+	AutoPossessPlayer = EAutoReceiveInput::Player0;
 }
 
 // Called when the game starts or when spawned
